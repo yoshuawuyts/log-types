@@ -1,0 +1,16 @@
+[package]
+name = "log-types"
+version = "1.0.0"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/yoshuawuyts/log-types"
+documentation = "https://docs.rs/log-types"
+description = "Structured log types."
+keywords = ["log", "types", "common", "kv"]
+categories = ["command-line-utilities", "development-tools::debugging"]
+authors = ["Yoshua Wuyts <yoshuawuyts@gmail.com>"]
+readme = "README.md"
+edition = "2018"
+
+[dependencies]
+
+[dev-dependencies]
