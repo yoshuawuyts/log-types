@@ -8,12 +8,6 @@ Structured log types.
 - [Crates.io][2]
 - [Releases][releases]
 
-## Examples
-__Basic usage__
-```rust
-// tbi
-```
-
 ## Installation
 ```sh
 $ cargo add log-types
@@ -29,9 +23,6 @@ look at some of these issues:
 
 - [Issues labeled "good first issue"][good-first-issue]
 - [Issues labeled "help wanted"][help-wanted]
-
-## References
-None.
 
 ## License
 [MIT](./LICENSE-MIT) OR [Apache-2.0](./LICENSE-APACHE)

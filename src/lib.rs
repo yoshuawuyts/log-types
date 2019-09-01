@@ -1,26 +1,18 @@
 //! Structured log types.
 //!
-//! ## Example
-//! ```rust
-//! ```
+//! This crate is useful when creating shared log abstractions between crates; consistently marking
+//! pairs of logs.
+//!
+//! See also: [async-log](https://docs.rs/async-log/),
+//! [log::kv](https://docs.rs/log/0.4.8/log/kv/index.html),
 
 #![forbid(unsafe_code, future_incompatible, rust_2018_idioms)]
 #![deny(missing_debug_implementations, nonstandard_style)]
 #![warn(missing_docs, missing_doc_code_examples, unreachable_pub)]
 #![cfg_attr(test, deny(warnings))]
 
-/// Delimit a span.
-pub enum Span {
-    /// Marks the end of a span.
-    End,
-    /// Marks the start of a span.
-    Start,
-}
+mod http;
+mod span;
 
-/// Delimit an HTTP request
-pub enum Http {
-    /// Marks an HTTP Request.
-    Request,
-    /// Marks an HTTP Response.
-    Response,
-}
+pub use http::Http;
+pub use span::Span;
