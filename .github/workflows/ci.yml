@@ -1,0 +1,41 @@
+name: CI
+on: [push]
+
+jobs:
+  test:
+    name: ${{ matrix.rust }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest] # , windows-latest, macOS-latest
+        rust: [nightly]
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install rustup
+      if: matrix.os == 'macOS-latest'
+      run: |
+        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-toolchain=${{ matrix.rust }} -y
+        export PATH="$HOME/.cargo/bin:$PATH"
+    - name: Set toolchain
+      run: |
+        export PATH="$HOME/.cargo/bin:$PATH"
+        rustup override set ${{ matrix.rust }}
+        rustup update
+        rustup component add rustfmt
+        rustc --version
+        cargo --version
+        rustup --version
+    - name: Cargo check
+      run: |
+        export PATH="$HOME/.cargo/bin:$PATH"
+        cargo check --all --benches --bins --examples --tests
+      # env:
+      #   RUSTFLAGS: "-D warnings"
+    - name: Cargo test
+      run: |
+        export PATH="$HOME/.cargo/bin:$PATH"
+        cargo test --all --verbose
+    - name: Cargo fmt
+      run: |
+        export PATH="$HOME/.cargo/bin:$PATH"
+        cargo fmt --all -- --check

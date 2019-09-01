@@ -1,5 +1,5 @@
 # log-types
-[![crates.io version][1]][2] [![build status][3]][4]
+[![crates.io version][1]][2]
 [![downloads][5]][6] [![docs.rs docs][7]][8]
 
 Structured log types.
@@ -29,8 +29,6 @@ look at some of these issues:
 
 [1]: https://img.shields.io/crates/v/log-types.svg?style=flat-square
 [2]: https://crates.io/crates/log-types
-[3]: https://img.shields.io/travis/yoshuawuyts/log-types/master.svg?style=flat-square
-[4]: https://travis-ci.org/yoshuawuyts/log-types
 [5]: https://img.shields.io/crates/d/log-types.svg?style=flat-square
 [6]: https://crates.io/crates/log-types
 [7]: https://img.shields.io/badge/docs-latest-blue.svg?style=flat-square
