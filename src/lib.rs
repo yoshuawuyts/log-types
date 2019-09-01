@@ -3,8 +3,8 @@
 //! This crate is useful when creating shared log abstractions between crates; consistently marking
 //! pairs of logs.
 //!
-//! See also: [async-log](https://docs.rs/async-log/),
-//! [log::kv](https://docs.rs/log/0.4.8/log/kv/index.html),
+//! See also: [`async-log`](https://docs.rs/async-log/),
+//! [`log::kv`](https://docs.rs/log/0.4.8/log/kv/index.html),
 
 #![forbid(unsafe_code, future_incompatible, rust_2018_idioms)]
 #![deny(missing_debug_implementations, nonstandard_style)]
