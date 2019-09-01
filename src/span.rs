@@ -1,4 +1,4 @@
-use log::kv::{Key, Source, ToKey, ToValue, Value, Visitor, Error};
+use log::kv::{Error, Key, Source, ToKey, ToValue, Value, Visitor};
 
 /// Delimit a span.
 ///
@@ -30,7 +30,10 @@ impl ToValue for Span {
 }
 
 impl Source for Span {
-    fn visit<'kvs>(&'kvs self, visitor: &mut dyn Visitor<'kvs>) -> Result<(), Error> where Self: Sized {
+    fn visit<'kvs>(&'kvs self, visitor: &mut dyn Visitor<'kvs>) -> Result<(), Error>
+    where
+        Self: Sized,
+    {
         visitor.visit_pair(self.to_key(), self.to_value())?;
         Ok(())
     }
