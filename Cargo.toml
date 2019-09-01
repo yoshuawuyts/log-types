@@ -1,6 +1,6 @@
 [package]
 name = "log-types"
-version = "1.0.0"
+version = "1.0.1"
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/yoshuawuyts/log-types"
 documentation = "https://docs.rs/log-types"
